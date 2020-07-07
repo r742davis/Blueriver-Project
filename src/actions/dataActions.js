@@ -2,19 +2,15 @@ import {
   FETCH_API_BEGIN,
   FETCH_API_SUCCESS,
   FETCH_API_FAILURE,
-} from "../actions/action-types";
+} from "./action-types";
 import axios from "axios";
 
-const URL= "https://jsonplaceholder.typicode.com/todos/1";
-
-// const URL = process.env.NODE_ENV === "production" 
-// ? "https://bearmugclub.herokuapp.com/api/API/"
-// : "http://localhost:5000/api/beers/";
+const apiEndpoint= "https://applefacilities.review.blueriver.com/index.cfm/_api/json/v1/scv/building/?andOpenGrouping&locationCode%5B0%5D=sqo&or&locationCode%5B2%5D=nwr&or&locationCode%5B4%5D=scv&or&locationCode%5B6%5D=sfo&closeGrouping&fields=buildingname,buildingabbr,lat,lng,black,buildingZone&active=1&cachedwithin=600";
 
 export const fetchAPI = () => {
   return (dispatch, getState) => {
     dispatch(fetchAPIBegin());
-    return fetch(URL)
+    return fetch(apiEndpoint)
       .then(res => res.json())
       .then(data => {
         dispatch(fetchAPISuccess(data));

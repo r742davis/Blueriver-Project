@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import testReducer from "./testReducer";
+import dataReducer from "./dataReducer";
 import errorReducer from "./errorReducer";
 
 export default combineReducers({
-  test: testReducer,
+  data: dataReducer,
   error: errorReducer,
 });

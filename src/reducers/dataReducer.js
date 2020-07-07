@@ -5,8 +5,10 @@ import {
 } from "../actions/action-types";
 
 const initialState = {
-  testWorks: false,
-  testObject: {},
+  loading: false,
+  data: null,
+  buildingsArray: null,
+  error: null
 };
 
 export default function (state = initialState, action) {
@@ -23,6 +25,7 @@ export default function (state = initialState, action) {
         loading: false,
         testWorks: true,
         data: action.payload,
+        buildingsArray: action.payload.data.items,
       };
     case FETCH_API_FAILURE:
       return {

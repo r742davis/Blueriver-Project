@@ -2,23 +2,22 @@ import React from "react";
 // import Routing from "../components/Routing";
 import Home from "../pages/Home";
 import { connect } from "react-redux";
-import { fetchAPI } from "../actions/testActions";
+import { fetchAPI } from "../actions/dataActions";
 const actions = { fetchAPI };
-function mapStateToProps(state) {
-  return {};
-}
+const mapStateToProps = (state) => ({
+  data: state.data
+})
 
 class AppContainer extends React.Component {
-  state = {};
-
   componentDidMount = async () => {
     await this.retrieveAPI();
   };
 
-  retrieveAPI = () => {
+  retrieveAPI = async () => {
     console.log("Retrieving API...");
     try {
-      this.props.fetchAPI();
+      await this.props.fetchAPI();
+      console.log(this.props.data)
     } catch (e) {
       throw new Error("Cannot retrieve API");
     }
