@@ -6,7 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import { connect } from "react-redux";
-import TESTPAGE from "../pages/TESTPAGE";
+import Test from "../pages/test";
 
 const mapStateToProps = () => ({});
 
@@ -15,8 +15,8 @@ const Routing = (props) => {
     <>
       <Router>
         <Switch>
-          <Route exact path={`/home`}>
-            <TESTPAGE />
+          <Route exact path={`/`}>
+            <Test />
           </Route>
         </Switch>
       </Router>
