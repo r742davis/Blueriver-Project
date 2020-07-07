@@ -51,7 +51,6 @@ const mappedResults = () => {
 
 }
 
-  console.log(map.map(item => console.log));
 
   return (
     <div className="display-container alignment">
